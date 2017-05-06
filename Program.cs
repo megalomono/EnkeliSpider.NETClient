@@ -15,14 +15,14 @@ namespace RestClient
 
         static async Task RunAsync()
         {
-            Console.WriteLine("Push enter to start an event");
+            Console.WriteLine("Press enter to start an event");
             Console.ReadLine();
             try
             {
                 var client = new EnkeliSpiderGateway(ADDRESS, SECURITY_TOKEN);
                 var currentEvent = await client.StartEventAsync();
                 Console.WriteLine(currentEvent.GetInfo());
-                Console.WriteLine("Push enter to finish the event");
+                Console.WriteLine("Press enter to finish the event");
                 Console.ReadLine();
                 currentEvent = await client.StopEventAsync();
                 Console.WriteLine(currentEvent.GetInfo());
@@ -38,7 +38,7 @@ namespace RestClient
             {
                 Console.WriteLine(e.Message);
             }
-            Console.WriteLine("Push enter to exit");
+            Console.WriteLine("Press enter to exit");
             Console.ReadLine();
         }
     }
